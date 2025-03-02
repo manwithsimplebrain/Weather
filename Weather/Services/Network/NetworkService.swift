@@ -15,10 +15,11 @@ class NetworkService {
             throw NetworkError.invalidURL
         }
         
-        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         if let items = endpoint.queryItems {
             var queryItems = components?.queryItems ?? []
             queryItems += items
+            components?.queryItems = queryItems
         }
         
         var request = URLRequest(url: components?.url ?? url)

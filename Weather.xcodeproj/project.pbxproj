@@ -76,6 +76,7 @@
 		4F06F7EF2D745B4900D864FE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6D0EA8192D74A3C500265731 /* Location */,
 				4F06F7F02D745E7000D864FE /* Network */,
 			);
 			path = Services;
@@ -138,6 +139,13 @@
 				4F6EC8002D7408FB00982473 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6D0EA8192D74A3C500265731 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

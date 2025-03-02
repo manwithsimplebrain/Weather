@@ -9,16 +9,23 @@ import SwiftUI
 import CoreLocationUI
 
 struct WeatherView: View {
+    @State private var weather: Weather?
+    
     var body: some View {
         ZStack {
-            background
-            mainContent
+            if weather != nil {
+                mainContent
+            } else {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            }
         }
+        .background(background) // set backgound here to content fit into screen
         .task {
             do {
-                let stub = StubRepository()
-                let weather = try await stub.fetchWeather(lat: 10, long: 10)
-                print(weather)
+                let repository = WeatherRepository()
+                let weather = try await repository.fetchWeather(lat: 44.34, long: 10.99)
+                self.weather = weather
             } catch {
                 print("Load weather faild: \(error)")
             }
@@ -26,8 +33,13 @@ struct WeatherView: View {
     }
     
     var background: some View {
-        Color.white
+        Image("blue_cloud_sky")
+            .resizable()
+            .scaledToFill()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .clipped()
             .ignoresSafeArea()
+            .blur(radius: 10)
     }
     
     var mainContent: some View {
@@ -55,25 +67,44 @@ struct WeatherView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack {
-                MesurementView(title: "Min Temp", subtitle: "21°", image: Image(systemName: "thermometer"))
+                MesurementView(
+                    title: "Min Temp",
+                    subtitle: weather!.minTempString,
+                    image: Image(systemName: "thermometer")
+                )
                 Spacer()
-                MesurementView(title: "Max Temp", subtitle: "31°", image: Image(systemName: "thermometer"))
+                MesurementView(
+                    title: "Max Temp",
+                    subtitle: weather!.maxTempString,
+                    image: Image(systemName: "thermometer")
+                )
             }
             HStack {
-                MesurementView(title: "Wind Speed", subtitle: "2m/s", image: Image(systemName: "wind.snow"))
+                MesurementView(
+                    title: "Wind Speed",
+                    subtitle: weather!.windString,
+                    image: Image(systemName: "wind.snow")
+                )
                 Spacer()
-                MesurementView(title: "Humidity", subtitle: "56%", image: Image(systemName: "humidity"))
+                MesurementView(
+                    title: "Humidity",
+                    subtitle: weather!.humidityString,
+                    image: Image(systemName: "humidity")
+                )
             }
             HStack {
-                MesurementView(title: "Pressure", subtitle: "1000hpa", image: Image(systemName: "aqi.medium"))
+                MesurementView(
+                    title: "Pressure",
+                    subtitle: weather!.pressureString,
+                    image: Image(systemName: "aqi.medium")
+                )
                 Spacer()
             }
         }
-        .foregroundColor(.secondary)
+        .foregroundColor(.white)
         .padding()
-        .background(.ultraThinMaterial)
-        .backgroundStyle(.blue)
-        .clipShape(RoundedCorner(radius: 20, corners: [.topLeft, .topRight]))
+        .background(RoundedRectangle(cornerRadius: 20).fill(.ultraThinMaterial).ignoresSafeArea())
+        .backgroundStyle(.black)
     }
     
     var locationSection: some View {
@@ -86,27 +117,28 @@ struct WeatherView: View {
                 .font(.headline)
                 .fontWeight(.medium)
         }
-        .foregroundColor(.secondary)
+        .foregroundColor(.white)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     var tempertureSection: some View {
         HStack {
             VStack {
-                Image(systemName: "cloud.moon")
+                Image(systemName: weather!.symbol)
                     .imageScale(.large)
                     .font(.system(size: 50))
-                Text("Clouds")
+                Text(weather!.status)
                     .fontWeight(.medium)
                     .font(.system(size: 25))
             }
             
             Spacer()
             
-            Text("21°")
+            Text("\(Int(weather!.temp.rounded()))°")
                 .font(.system(size: 80))
+                
         }
-        .foregroundColor(.secondary)
+        .foregroundColor(.white)
     }
 }
 

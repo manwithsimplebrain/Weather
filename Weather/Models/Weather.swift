@@ -64,3 +64,53 @@ struct Weather: Decodable {
     }
     
 }
+
+extension Weather {
+    var symbol: String {
+        let iconMapping: [String: String] = [
+            "01d": "sun.max",
+            "01n": "moon.stars",
+            "02d": "cloud.sun",
+            "02n": "cloud.moon",
+            "03d": "cloud",
+            "03n": "cloud",
+            "04d": "smoke",
+            "04n": "smoke",
+            "09d": "cloud.rain",
+            "09n": "cloud.rain",
+            "10d": "cloud.sun.rain",
+            "10n": "cloud.moon.rain",
+            "11d": "cloud.bolt",
+            "11n": "cloud.bolt",
+            "13d": "snow",
+            "13n": "snow",
+            "50d": "cloud.fog",
+            "50n": "cloud.fog"
+        ]
+        return iconMapping[icon] ?? "questionmark.circle"
+    }
+    
+    var tempString: String {
+        return "\(Int(temp.rounded()))°"
+    }
+    
+    var maxTempString: String {
+        return "\(Int(max.rounded()))°"
+    }
+    
+    var minTempString: String {
+        return "\(Int(min.rounded()))°"
+    }
+    
+    var windString: String {
+        return "\(Int(wind.rounded())) m/s"
+    }
+    
+    var humidityString: String {
+        return "\(humidity)%"
+    }
+    
+    var pressureString: String {
+        return "\(pressure) hPa"
+    }
+}
