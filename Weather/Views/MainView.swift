@@ -13,12 +13,12 @@ struct MainView: View {
         TabView {
             WeatherView()
                 .tabItem {
-                    Label("Weather", systemImage: "thermometer")
+                    Label("weather".localized, systemImage: "thermometer")
                 }
             
             SettingView()
                 .tabItem {
-                    Label("Setting", systemImage: "gear")
+                    Label("settings".localized, systemImage: "gear")
                 }
         }
     }

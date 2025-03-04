@@ -64,4 +64,42 @@ class WeatherViewModel: ObservableObject {
     }
 }
 
+extension WeatherViewModel {
+    var lastUpdateAt: String {
+        return L10n.lastUpdateAt
+    }
+    
+    var todayWeather: String {
+        return L10n.todayWeather
+    }
+    
+    var minTemperature: String {
+        return L10n.minTemp
+    }
+    
+    var maxTemperature: String {
+        return L10n.maxTemp
+    }
+    
+    var humidity: String {
+        return L10n.humidity
+    }
+    
+    var windSpeed: String {
+        return L10n.windSpeed
+    }
+    
+    var pressure: String {
+        return L10n.pressure
+    }
+    
+    var weatherTab: String {
+        return L10n.weather
+    }
+    
+    var settingsTab: String {
+        return L10n.settings
+    }
+}
+
 

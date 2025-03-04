@@ -27,6 +27,7 @@ struct MesurementView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(title)
                     .font(.headline)
+                    .lineLimit(1)
                 Text(subtitle)
                     .font(.largeTitle)
                     .fontWeight(.bold)

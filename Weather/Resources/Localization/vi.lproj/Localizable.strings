@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Weather
+
+  Created by Dat Doan on 4/3/25.
+  
+*/
+"humidity" = "Độ ẩm"; // vi
+"last_update_at" = "Cập nhật lúc:"; // vi
+"max_temp" = "Ngưỡng cao"; // vi
+"min_temp" = "Ngưỡng thấp"; // vi
+"pressure" = "Áp suất"; // vi
+"settings" = "Cài đặt"; // vi
+"today_weather" = "Thời tiết hôm nay"; // vi
+"weather" = "Thời tiết"; // vi
+"wind_speed" = "Tốc độ gió"; // vi
+

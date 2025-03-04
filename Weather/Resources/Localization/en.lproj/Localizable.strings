@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Weather
+
+  Created by Dat Doan on 4/3/25.
+  
+*/
+"humidity" = "Humidity"; // en
+"last_update_at" = "Last update at:"; // en
+"max_temp" = "Max Temp"; // en
+"min_temp" = "Min Temp"; // en
+"pressure" = "Pressure"; // en
+"settings" = "Settings"; // en
+"today_weather" = "Today’s Weather"; // en
+"weather" = "Weather"; // en
+"wind_speed" = "Wind Speed"; // en
+

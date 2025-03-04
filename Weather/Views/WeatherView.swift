@@ -61,40 +61,40 @@ struct WeatherView: View {
         let weather = viewModel.weather
         
         VStack(spacing: 20) {
-            Text("Today's Weather")
+            Text(viewModel.todayWeather)
                 .font(.title)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack {
                 MesurementView(
-                    title: "Min Temp",
+                    title: viewModel.minTemperature,
                     subtitle: weather!.minTempString,
                     image: Image(systemName: "thermometer")
                 )
                 Spacer()
                 MesurementView(
-                    title: "Max Temp",
+                    title: viewModel.maxTemperature,
                     subtitle: weather!.maxTempString,
                     image: Image(systemName: "thermometer")
                 )
             }
             HStack {
                 MesurementView(
-                    title: "Wind Speed",
+                    title: viewModel.windSpeed,
                     subtitle: weather!.windString,
                     image: Image(systemName: "wind.snow")
                 )
                 Spacer()
                 MesurementView(
-                    title: "Humidity",
+                    title: viewModel.humidity,
                     subtitle: weather!.humidityString,
                     image: Image(systemName: "humidity")
                 )
             }
             HStack {
                 MesurementView(
-                    title: "Pressure",
+                    title: viewModel.pressure,
                     subtitle: weather!.pressureString,
                     image: Image(systemName: "aqi.medium")
                 )
@@ -113,7 +113,7 @@ struct WeatherView: View {
                 .font(.system(size: 50))
                 .fontWeight(.heavy)
                 .bold()
-            Text("Last update at: \(Date().formatted())")
+            Text("\(viewModel.lastUpdateAt) \(Date().formatted())")
                 .font(.headline)
                 .fontWeight(.medium)
         }
