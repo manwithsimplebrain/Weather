@@ -9,37 +9,34 @@ import SwiftUI
 import CoreLocationUI
 
 struct WeatherView: View {
-    @State private var weather: Weather?
+    @StateObject private var viewModel = WeatherViewModel()
     
     var body: some View {
         ZStack {
-            if weather != nil {
+            if viewModel.weather != nil {
                 mainContent
             } else {
                 ProgressView()
                     .progressViewStyle(.circular)
             }
+            if viewModel.showGuideView {
+                EnableLocationView()
+                    .background(.white)
+            }
         }
         .background(background) // set backgound here to content fit into screen
-        .task {
-            do {
-                let repository = WeatherRepository()
-                let weather = try await repository.fetchWeather(lat: 44.34, long: 10.99)
-                self.weather = weather
-            } catch {
-                print("Load weather faild: \(error)")
-            }
+        .onAppear {
+            viewModel.requestLocationPermission()
         }
     }
     
     var background: some View {
-        Image("blue_cloud_sky")
+        Image("star_sky")
             .resizable()
             .scaledToFill()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
             .ignoresSafeArea()
-            .blur(radius: 10)
     }
     
     var mainContent: some View {
@@ -59,7 +56,10 @@ struct WeatherView: View {
         .padding(.vertical, 16)
     }
     
+    @ViewBuilder
     var bottomContent: some View {
+        let weather = viewModel.weather
+        
         VStack(spacing: 20) {
             Text("Today's Weather")
                 .font(.title)
@@ -109,7 +109,7 @@ struct WeatherView: View {
     
     var locationSection: some View {
         VStack(alignment: .leading) {
-            Text("London")
+            Text(viewModel.address?.city ?? "")
                 .font(.system(size: 50))
                 .fontWeight(.heavy)
                 .bold()
@@ -121,7 +121,10 @@ struct WeatherView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    @ViewBuilder
     var tempertureSection: some View {
+        let weather = viewModel.weather
+        
         HStack {
             VStack {
                 Image(systemName: weather!.symbol)

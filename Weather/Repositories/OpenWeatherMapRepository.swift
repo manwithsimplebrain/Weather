@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WeatherEndpoint: Endpoint {
+struct OpenWeatherMapEndpoint: Endpoint {
     var url: URL?
     var queryItems: [URLQueryItem]?
     
@@ -16,11 +16,15 @@ struct WeatherEndpoint: Endpoint {
     }
 }
 
-class WeatherRepository: WeatherClient {
-    private let service = NetworkService()
+final class OpenWeatherMapRepository: WeatherRepository {
+    private let service: NetworkServiceable
+    
+    init(service: NetworkServiceable = NetworkService()) {
+        self.service = service
+    }
     
     func fetchWeather(lat: Double, long: Double) async throws -> Weather {
-        var endpoint = WeatherEndpoint()
+        var endpoint = OpenWeatherMapEndpoint()
         endpoint.queryItems = [
             URLQueryItem(name: "lat", value: String(lat)),
             URLQueryItem(name: "lon", value: String(long)),

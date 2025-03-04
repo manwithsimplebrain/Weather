@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StubRepository: WeatherClient {
+class StubRepository: WeatherRepository {
     func fetchWeather(lat: Double, long: Double) async throws -> Weather {
         guard let weatherURL = Bundle.main.url(forResource: "weather", withExtension: "json") else {
             throw NSError()

@@ -7,9 +7,7 @@
 
 import Foundation
 
-
-class NetworkService {
-    
+class NetworkService: NetworkServiceable {
     func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
         guard let url = endpoint.url else {
             throw NetworkError.invalidURL
