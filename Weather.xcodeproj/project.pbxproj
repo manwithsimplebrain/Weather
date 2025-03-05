@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,7 @@
 		6D141F222D78272E00472D58 /* CDReponseCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D141F212D78272E00472D58 /* CDReponseCaching.swift */; };
 		6D141F252D78291900472D58 /* Caching.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D141F232D78291900472D58 /* Caching.xcdatamodeld */; };
 		6D141F272D782A2100472D58 /* CDCachedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D141F262D782A2100472D58 /* CDCachedResponse.swift */; };
+		6D141F2A2D78339C00472D58 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 6D141F292D78339C00472D58 /* Networking */; };
 		6D2E1F3C2D76F2F000971209 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 6D2E1F3B2D76F2F000971209 /* Networking */; };
 		6DBF6C7E2D76AA80009BBC24 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF6C7D2D76AA80009BBC24 /* String+Localization.swift */; };
 		6DBF6C882D76C445009BBC24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DBF6C862D76C445009BBC24 /* Localizable.strings */; };
@@ -78,6 +79,7 @@
 			files = (
 				6D2E1F3C2D76F2F000971209 /* Networking in Frameworks */,
 				6DBF6C982D76F082009BBC24 /* Networking in Frameworks */,
+				6D141F2A2D78339C00472D58 /* Networking in Frameworks */,
 				6DD38F822D7596E900F9D74D /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +297,7 @@
 			mainGroup = 4F6EC7ED2D7408F900982473;
 			packageReferences = (
 				6DD38F802D7596E900F9D74D /* XCRemoteSwiftPackageReference "Factory" */,
-				6D2E1F3A2D76F2F000971209 /* XCLocalSwiftPackageReference "Networking" */,
+				6D141F282D78339C00472D58 /* XCRemoteSwiftPackageReference "Networking" */,
 			);
 			productRefGroup = 4F6EC7F72D7408F900982473 /* Products */;
 			projectDirPath = "";
@@ -589,14 +591,15 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		6D2E1F3A2D76F2F000971209 /* XCLocalSwiftPackageReference "Networking" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Networking;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
+		6D141F282D78339C00472D58 /* XCRemoteSwiftPackageReference "Networking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/manwithsimplebrain/Networking.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		6DD38F802D7596E900F9D74D /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory.git";
@@ -608,6 +611,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6D141F292D78339C00472D58 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D141F282D78339C00472D58 /* XCRemoteSwiftPackageReference "Networking" */;
+			productName = Networking;
+		};
 		6D2E1F3B2D76F2F000971209 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;

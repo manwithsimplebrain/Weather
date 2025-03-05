@@ -1,5 +1,5 @@
 {
-  "originHash" : "ace0b7026a8f8958af3659aa7570153176ef7536ea4602a38c57cc24f6eda8b1",
+  "originHash" : "a1d6fd901f843458b3a7a65ef19f7b454ad300fab3c8ce4c9638a39f058e8829",
   "pins" : [
     {
       "identity" : "factory",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "fb04a8918848e413d3921d346a23bae7f81088d9",
         "version" : "2.4.3"
+      }
+    },
+    {
+      "identity" : "networking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/manwithsimplebrain/Networking.git",
+      "state" : {
+        "revision" : "30ebbe85ef263af5ee31574f36e029d0139d8f13",
+        "version" : "1.0.0"
       }
     }
   ],

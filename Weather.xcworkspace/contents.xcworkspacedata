@@ -4,7 +4,4 @@
    <FileRef
       location = "group:Weather.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Networking">
-   </FileRef>
 </Workspace>
