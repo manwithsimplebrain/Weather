@@ -12,7 +12,7 @@ final class OpenWeatherMapRepository: WeatherRepository {
     private let service: NetworkService
     
     init() {
-        self.service = NetworkService()
+        self.service = NetworkService(config: DefaultNetworkServiceConfig(cacheManager: CDReponseCaching()))
     }
     
     func fetchWeather(lat: Double, long: Double) async throws -> Weather {
