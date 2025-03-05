@@ -6,30 +6,24 @@
 //
 
 import Foundation
-
-struct OpenStreetMapEndpoint: Endpoint {
-    var url: URL?
-    var queryItems: [URLQueryItem]?
-    
-    init() {
-        self.url = URL(string: "https://nominatim.openstreetmap.org/reverse")
-    }
-}
+import Networking
 
 final class OpenStreetMapRepository: GeoRepository {
-    private let service: NetworkServiceable
+    private let service: NetworkService
     
-    init(service: NetworkServiceable = NetworkService()) {
-        self.service = service
+    init() {
+        self.service = NetworkService()
     }
     
     func convert(lat: Double, long: Double) async throws -> Address {
-        var endpoint = OpenStreetMapEndpoint()
-        endpoint.queryItems = [
-            URLQueryItem(name: "lat", value: String(lat)),
-            URLQueryItem(name: "lon", value: String(long)),
-            URLQueryItem(name: "format", value: "json")
-        ]
-        return try await service.request(endpoint)
+        let request = Request(
+            url: URL(string: "https://nominatim.openstreetmap.org/reverse")!,
+            queryItems: [
+                "lat" : String(lat),
+                "lon" : String(long),
+                "format" : "json"
+            ]
+        )
+        return try await service.requestObject(request: request)
     }
 }

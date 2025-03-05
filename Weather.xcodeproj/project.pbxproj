@@ -3,15 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4F06F7E62D744C9000D864FE /* Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F06F7E42D744C9000D864FE /* Weather.xcdatamodeld */; };
 		4F06F7E82D744F0700D864FE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06F7E72D744F0700D864FE /* MainView.swift */; };
 		4F06F7EA2D744F8E00D864FE /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06F7E92D744F8E00D864FE /* SettingView.swift */; };
-		4F06F7EC2D745B0000D864FE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06F7EB2D745B0000D864FE /* NetworkService.swift */; };
-		4F06F7F22D745E8400D864FE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06F7F12D745E8400D864FE /* Endpoint.swift */; };
 		4F06F7F42D74636F00D864FE /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06F7F32D74636F00D864FE /* WeatherRepository.swift */; };
 		4F06F7F62D74648200D864FE /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06F7F52D74648200D864FE /* Weather.swift */; };
 		4F06F7F82D7465FA00D864FE /* OpenWeatherMapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06F7F72D7465FA00D864FE /* OpenWeatherMapRepository.swift */; };
@@ -23,13 +21,14 @@
 		4F6EC8012D7408FB00982473 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6EC8002D7408FB00982473 /* Preview Assets.xcassets */; };
 		4F6EC8082D74188000982473 /* MesurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6EC8072D74188000982473 /* MesurementView.swift */; };
 		6D0EA81B2D74AE9500265731 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EA81A2D74AE9500265731 /* LocationService.swift */; };
+		6D2E1F3C2D76F2F000971209 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 6D2E1F3B2D76F2F000971209 /* Networking */; };
 		6DBF6C7E2D76AA80009BBC24 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF6C7D2D76AA80009BBC24 /* String+Localization.swift */; };
 		6DBF6C882D76C445009BBC24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DBF6C862D76C445009BBC24 /* Localizable.strings */; };
 		6DBF6C8B2D76C89F009BBC24 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF6C8A2D76C89F009BBC24 /* Strings+Generated.swift */; };
+		6DBF6C982D76F082009BBC24 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBF6C972D76F082009BBC24 /* Networking */; };
 		6DD38F7F2D757A7600F9D74D /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD38F7E2D757A7600F9D74D /* WeatherViewModel.swift */; };
 		6DD38F822D7596E900F9D74D /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 6DD38F812D7596E900F9D74D /* Factory */; };
 		6DD38F842D7599B500F9D74D /* LocationServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD38F832D7599B500F9D74D /* LocationServiceable.swift */; };
-		6DD38F872D759AE100F9D74D /* NetworkServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD38F862D759AE100F9D74D /* NetworkServiceable.swift */; };
 		6DD38F8A2D759D1B00F9D74D /* WeatherDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD38F892D759D1B00F9D74D /* WeatherDIContainer.swift */; };
 		6DD38F8C2D75A77500F9D74D /* EnableLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD38F8B2D75A77500F9D74D /* EnableLocationView.swift */; };
 		6DD38F8E2D75F73000F9D74D /* GeoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD38F8D2D75F73000F9D74D /* GeoRepository.swift */; };
@@ -41,8 +40,6 @@
 		4F06F7E52D744C9000D864FE /* Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weather.xcdatamodel; sourceTree = "<group>"; };
 		4F06F7E72D744F0700D864FE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4F06F7E92D744F8E00D864FE /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		4F06F7EB2D745B0000D864FE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		4F06F7F12D745E8400D864FE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		4F06F7F32D74636F00D864FE /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
 		4F06F7F52D74648200D864FE /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		4F06F7F72D7465FA00D864FE /* OpenWeatherMapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapRepository.swift; sourceTree = "<group>"; };
@@ -61,7 +58,6 @@
 		6DBF6C8A2D76C89F009BBC24 /* Strings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		6DD38F7E2D757A7600F9D74D /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		6DD38F832D7599B500F9D74D /* LocationServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceable.swift; sourceTree = "<group>"; };
-		6DD38F862D759AE100F9D74D /* NetworkServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceable.swift; sourceTree = "<group>"; };
 		6DD38F892D759D1B00F9D74D /* WeatherDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDIContainer.swift; sourceTree = "<group>"; };
 		6DD38F8B2D75A77500F9D74D /* EnableLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableLocationView.swift; sourceTree = "<group>"; };
 		6DD38F8D2D75F73000F9D74D /* GeoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoRepository.swift; sourceTree = "<group>"; };
@@ -74,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D2E1F3C2D76F2F000971209 /* Networking in Frameworks */,
+				6DBF6C982D76F082009BBC24 /* Networking in Frameworks */,
 				6DD38F822D7596E900F9D74D /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,19 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				6D0EA8192D74A3C500265731 /* Location */,
-				4F06F7F02D745E7000D864FE /* Network */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		4F06F7F02D745E7000D864FE /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				6DD38F862D759AE100F9D74D /* NetworkServiceable.swift */,
-				4F06F7EB2D745B0000D864FE /* NetworkService.swift */,
-				4F06F7F12D745E8400D864FE /* Endpoint.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		4F06F7FB2D7470D800D864FE /* Data */ = {
@@ -133,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				4F6EC7F82D7408F900982473 /* Weather */,
+				6DBF6C8E2D76E9B9009BBC24 /* Frameworks */,
 				4F6EC7F72D7408F900982473 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -205,6 +193,13 @@
 				6DBF6C8A2D76C89F009BBC24 /* Strings+Generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		6DBF6C8E2D76E9B9009BBC24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6DD38F7D2D757A5D00F9D74D /* ViewModels */ = {
@@ -283,6 +278,7 @@
 			mainGroup = 4F6EC7ED2D7408F900982473;
 			packageReferences = (
 				6DD38F802D7596E900F9D74D /* XCRemoteSwiftPackageReference "Factory" */,
+				6D2E1F3A2D76F2F000971209 /* XCLocalSwiftPackageReference "Networking" */,
 			);
 			productRefGroup = 4F6EC7F72D7408F900982473 /* Products */;
 			projectDirPath = "";
@@ -323,7 +319,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftgen > /dev/null; then\n  swiftgen config run\nelse\n  echo \"warning: SwiftGen không được cài đặt. Chạy 'brew install swiftgen' để cài đặt.\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif command -v swiftgen &> /dev/null; then\n  echo \"warning: SwiftGen đã được cài đặt!\"\nelse\n  echo \"warning: SwiftGen chưa được cài đặt.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -334,10 +330,8 @@
 			files = (
 				4F06F7E62D744C9000D864FE /* Weather.xcdatamodeld in Sources */,
 				4F6EC8082D74188000982473 /* MesurementView.swift in Sources */,
-				6DD38F872D759AE100F9D74D /* NetworkServiceable.swift in Sources */,
 				4F06F7F42D74636F00D864FE /* WeatherRepository.swift in Sources */,
 				6DD38F7F2D757A7600F9D74D /* WeatherViewModel.swift in Sources */,
-				4F06F7F22D745E8400D864FE /* Endpoint.swift in Sources */,
 				4F06F7F62D74648200D864FE /* Weather.swift in Sources */,
 				4F06F7FA2D74709A00D864FE /* StubRepository.swift in Sources */,
 				6DD38F922D75FA2B00F9D74D /* OpenStreetMapRespository.swift in Sources */,
@@ -354,7 +348,6 @@
 				6DBF6C7E2D76AA80009BBC24 /* String+Localization.swift in Sources */,
 				6DD38F842D7599B500F9D74D /* LocationServiceable.swift in Sources */,
 				6DD38F8E2D75F73000F9D74D /* GeoRepository.swift in Sources */,
-				4F06F7EC2D745B0000D864FE /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +569,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		6D2E1F3A2D76F2F000971209 /* XCLocalSwiftPackageReference "Networking" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Networking;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		6DD38F802D7596E900F9D74D /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -588,6 +588,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6D2E1F3B2D76F2F000971209 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		6DBF6C972D76F082009BBC24 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
 		6DD38F812D7596E900F9D74D /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6DD38F802D7596E900F9D74D /* XCRemoteSwiftPackageReference "Factory" */;

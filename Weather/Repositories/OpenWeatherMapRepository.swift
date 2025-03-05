@@ -6,31 +6,25 @@
 //
 
 import Foundation
-
-struct OpenWeatherMapEndpoint: Endpoint {
-    var url: URL?
-    var queryItems: [URLQueryItem]?
-    
-    init() {
-        self.url = URL(string: "https://api.openweathermap.org/data/2.5/weather")
-    }
-}
+import Networking
 
 final class OpenWeatherMapRepository: WeatherRepository {
-    private let service: NetworkServiceable
+    private let service: NetworkService
     
-    init(service: NetworkServiceable = NetworkService()) {
-        self.service = service
+    init() {
+        self.service = NetworkService()
     }
     
     func fetchWeather(lat: Double, long: Double) async throws -> Weather {
-        var endpoint = OpenWeatherMapEndpoint()
-        endpoint.queryItems = [
-            URLQueryItem(name: "lat", value: String(lat)),
-            URLQueryItem(name: "lon", value: String(long)),
-            URLQueryItem(name: "appid", value: "7dd3af04282f3d5c97c839e4b63cec98"),
-            URLQueryItem(name: "units", value: "metric")
-        ]
-        return try await service.request(endpoint)
+        let request = Request(
+            url: URL(string: "https://api.openweathermap.org/data/2.5/weather")!,
+            queryItems: [
+                "lat" : String(lat),
+                "lon" : String(long),
+                "appid" : "7dd3af04282f3d5c97c839e4b63cec98",
+                "units" : "metric"
+            ]
+        )
+        return try await service.requestObject(request: request)
     }
 }
