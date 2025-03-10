@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Weather.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "container:../Networking">
+   </FileRef>
 </Workspace>

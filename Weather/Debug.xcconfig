@@ -1,0 +1,13 @@
+//
+//  Debug.xcconfig
+//  Weather
+//
+//  Created by Dat Doan on 8/3/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+OAUTH_APP_ID = your-app-id
+OAUTH_SECRET_KEY = your-secret-key
+OAUTH_SCOPE = email profile

@@ -30,13 +30,16 @@ struct WeatherView: View {
         }
     }
     
+    @ViewBuilder
     var background: some View {
-        Image("star_sky")
-            .resizable()
-            .scaledToFill()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .clipped()
-            .ignoresSafeArea()
+        if let bgImage = viewModel.backgroundImage {
+            Image(uiImage: bgImage)
+                .resizable()
+                .scaledToFill()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .clipped()
+                .ignoresSafeArea()
+        }
     }
     
     var mainContent: some View {

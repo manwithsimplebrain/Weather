@@ -7,13 +7,10 @@
 
 import Foundation
 import Networking
+import Factory
 
 final class OpenWeatherMapRepository: WeatherRepository {
-    private let service: NetworkService
-    
-    init() {
-        self.service = NetworkService(config: DefaultNetworkServiceConfig(cacheManager: CDReponseCaching()))
-    }
+    @Injected(\.networkService) private var service: NetworkService
     
     func fetchWeather(lat: Double, long: Double) async throws -> Weather {
         let request = Request(
@@ -23,7 +20,8 @@ final class OpenWeatherMapRepository: WeatherRepository {
                 "lon" : String(long),
                 "appid" : "7dd3af04282f3d5c97c839e4b63cec98",
                 "units" : "metric"
-            ]
+            ],
+            cachePolicy: .returnCacheDataElseLoad(ttl: 60) // caching 5 minutes
         )
         return try await service.requestObject(request: request)
     }

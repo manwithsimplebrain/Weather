@@ -7,13 +7,10 @@
 
 import Foundation
 import Networking
+import Factory
 
 final class OpenStreetMapRepository: GeoRepository {
-    private let service: NetworkService
-    
-    init() {
-        self.service = NetworkService()
-    }
+    @Injected(\.networkService) private var service: NetworkService
     
     func convert(lat: Double, long: Double) async throws -> Address {
         let request = Request(
@@ -22,7 +19,8 @@ final class OpenStreetMapRepository: GeoRepository {
                 "lat" : String(lat),
                 "lon" : String(long),
                 "format" : "json"
-            ]
+            ],
+            cachePolicy: .reloadIgnoringLocalCacheData
         )
         return try await service.requestObject(request: request)
     }

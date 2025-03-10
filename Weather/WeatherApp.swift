@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct WeatherApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @State private var rootViewModel = RootViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            RootView()
+                .environmentObject(rootViewModel)
         }
     }
 }

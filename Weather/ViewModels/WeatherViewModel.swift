@@ -7,17 +7,21 @@
 
 import Foundation
 import Factory
+import FirebaseAnalytics
 
 class WeatherViewModel: ObservableObject {
     // Properties for UI
     @Published var weather: Weather?
     @Published var address: Address?
+    @Published var backgroundImage: UIImage?
     @Published var showGuideView = false
     
     // Dependencies
     @Injected(\.weatherRepository) private var weatherRepository
     @Injected(\.geoRepository) private var geoRepository
     @Injected(\.locationService) private var locationService
+    @Injected(\.trackingService) private var trackingService
+    @Injected(\.storageService) private var storageService
     
     func requestLocationPermission() {
         Task {
@@ -47,9 +51,14 @@ class WeatherViewModel: ObservableObject {
         
         let (weather, address) = try await (weatherTask, addressTask)
         
+        // fetch background image
+        fetchBackgroundImage(name: weather.icon)
+        
         await MainActor.run {
             self.weather = weather
             self.address = address
+            
+            trackingService.logEvent(DefaultEvent(name: AnalyticsEventAddToCart))
         }
     }
     
@@ -61,6 +70,16 @@ class WeatherViewModel: ObservableObject {
     @MainActor
     func hiddenGuide() {
         showGuideView = false
+    }
+    
+    func fetchBackgroundImage(name: String?) {
+        Task {
+            guard let name else { return }
+            let image = await storageService.fetchImage(name)
+            await MainActor.run {
+                backgroundImage = image
+            }
+        }
     }
 }
 
