@@ -23,6 +23,8 @@
 		6D0EA81B2D74AE9500265731 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EA81A2D74AE9500265731 /* LocationService.swift */; };
 		6D141F2A2D78339C00472D58 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 6D141F292D78339C00472D58 /* Networking */; };
 		6D141F2D2D7896BD00472D58 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 6D141F2C2D7896BD00472D58 /* Networking */; };
+		6D22A5372D83EA2B00A0B399 /* SearchLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D22A5362D83EA2B00A0B399 /* SearchLocationView.swift */; };
+		6D22A5392D83F14E00A0B399 /* SearchLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D22A5382D83F14E00A0B399 /* SearchLocationViewModel.swift */; };
 		6D2E1F3C2D76F2F000971209 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 6D2E1F3B2D76F2F000971209 /* Networking */; };
 		6D5665A02D7C3589008E9925 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56659F2D7C3589008E9925 /* AuthenticationService.swift */; };
 		6D5ADAFC2D7C28BC00AF98CD /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6D5ADAFB2D7C28BC00AF98CD /* Debug.xcconfig */; };
@@ -37,6 +39,8 @@
 		6D5C041F2D79DFD900A913FB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C041E2D79DFD900A913FB /* LoginViewModel.swift */; };
 		6D5C04212D79E61A00A913FB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C04202D79E61A00A913FB /* RootView.swift */; };
 		6D5C04232D79E68800A913FB /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C04222D79E68800A913FB /* RootViewModel.swift */; };
+		6D7B3A582D808082004407B9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7B3A572D808082004407B9 /* InputView.swift */; };
+		6D8715072D812ED5002A9937 /* SaggingHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8715062D812ED5002A9937 /* SaggingHStack.swift */; };
 		6DB34B842D7E9A92009BB04D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6DB34B832D7E9A92009BB04D /* FirebaseCrashlytics */; };
 		6DB34B862D7E9A92009BB04D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6DB34B852D7E9A92009BB04D /* FirebaseFirestore */; };
 		6DB34B882D7E9A92009BB04D /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 6DB34B872D7E9A92009BB04D /* FirebaseRemoteConfig */; };
@@ -83,6 +87,8 @@
 		4F6EC8002D7408FB00982473 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4F6EC8072D74188000982473 /* MesurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesurementView.swift; sourceTree = "<group>"; };
 		6D0EA81A2D74AE9500265731 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		6D22A5362D83EA2B00A0B399 /* SearchLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationView.swift; sourceTree = "<group>"; };
+		6D22A5382D83F14E00A0B399 /* SearchLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewModel.swift; sourceTree = "<group>"; };
 		6D56659F2D7C3589008E9925 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		6D5ADAFB2D7C28BC00AF98CD /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		6D5ADAFD2D7C2FA500AF98CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 		6D5C041E2D79DFD900A913FB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6D5C04202D79E61A00A913FB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		6D5C04222D79E68800A913FB /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		6D7B3A572D808082004407B9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		6D8715062D812ED5002A9937 /* SaggingHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaggingHStack.swift; sourceTree = "<group>"; };
 		6DB34B8B2D7E9B41009BB04D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DB34B8D2D7E9C7E009BB04D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6DB34B922D7EB1C9009BB04D /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
@@ -153,6 +161,7 @@
 				6DD38F8B2D75A77500F9D74D /* EnableLocationView.swift */,
 				6D5C041C2D79DEBB00A913FB /* LoginView.swift */,
 				6D5C04202D79E61A00A913FB /* RootView.swift */,
+				6D22A5362D83EA2B00A0B399 /* SearchLocationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,9 +278,19 @@
 		6D5C04112D79942700A913FB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6D7B3A562D80806C004407B9 /* Views */,
 				6D5C04122D79943600A913FB /* KeychainStorage.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		6D7B3A562D80806C004407B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D7B3A572D808082004407B9 /* InputView.swift */,
+				6D8715062D812ED5002A9937 /* SaggingHStack.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		6DB34B8F2D7E9E1F009BB04D /* Tracking */ = {
@@ -333,6 +352,7 @@
 				6DD38F7E2D757A7600F9D74D /* WeatherViewModel.swift */,
 				6D5C041E2D79DFD900A913FB /* LoginViewModel.swift */,
 				6D5C04222D79E68800A913FB /* RootViewModel.swift */,
+				6D22A5382D83F14E00A0B399 /* SearchLocationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -480,6 +500,7 @@
 				6D5C04132D79943600A913FB /* KeychainStorage.swift in Sources */,
 				4F06F7F62D74648200D864FE /* Weather.swift in Sources */,
 				4F06F7FA2D74709A00D864FE /* StubRepository.swift in Sources */,
+				6D22A5372D83EA2B00A0B399 /* SearchLocationView.swift in Sources */,
 				6DD38F922D75FA2B00F9D74D /* OpenStreetMapRespository.swift in Sources */,
 				6DBF6C8B2D76C89F009BBC24 /* Strings+Generated.swift in Sources */,
 				4F6EC7FC2D7408F900982473 /* WeatherView.swift in Sources */,
@@ -494,8 +515,11 @@
 				6DD38F902D75F77800F9D74D /* Address.swift in Sources */,
 				4F6EC7FA2D7408F900982473 /* WeatherApp.swift in Sources */,
 				6DB34B932D7EB1C9009BB04D /* TrackingService.swift in Sources */,
+				6D8715072D812ED5002A9937 /* SaggingHStack.swift in Sources */,
 				4F06F7F82D7465FA00D864FE /* OpenWeatherMapRepository.swift in Sources */,
+				6D7B3A582D808082004407B9 /* InputView.swift in Sources */,
 				6DBF6C7E2D76AA80009BBC24 /* String+Localization.swift in Sources */,
+				6D22A5392D83F14E00A0B399 /* SearchLocationViewModel.swift in Sources */,
 				6DD38F842D7599B500F9D74D /* LocationServiceable.swift in Sources */,
 				6DB34BA32D7F2526009BB04D /* LocalStorage.swift in Sources */,
 				6D5C041D2D79DEBB00A913FB /* LoginView.swift in Sources */,

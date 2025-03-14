@@ -25,6 +25,8 @@ internal enum L10n {
   internal static let pressure = L10n.tr("Localizable", "pressure", fallback: "Pressure")
   /// Settings
   internal static let settings = L10n.tr("Localizable", "settings", fallback: "Settings")
+  /// Temperture
+  internal static let temperture = L10n.tr("Localizable", "temperture", fallback: "Temperture")
   /// Today’s Weather
   internal static let todayWeather = L10n.tr("Localizable", "today_weather", fallback: "Today’s Weather")
   /// Weather

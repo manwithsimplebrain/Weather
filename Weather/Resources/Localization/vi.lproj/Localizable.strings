@@ -14,4 +14,5 @@
 "today_weather" = "Thời tiết hôm nay"; // vi
 "weather" = "Thời tiết"; // vi
 "wind_speed" = "Tốc độ gió"; // vi
+"temperture" = "Nhiệt độ";
 

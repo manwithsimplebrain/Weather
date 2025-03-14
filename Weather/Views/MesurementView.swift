@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MesurementView: View {
-    let color: Color = .gray
+    let color: Color = .secondary
     let title: String
     let subtitle: String
     var image: Image?
@@ -18,26 +18,37 @@ struct MesurementView: View {
             ZStack {
                 Circle()
                     .fill(color)
-                    .frame(width: 70, height: 70)
+                    .frame(width: 60, height: 60)
                 if let image {
-                    image.imageScale(.large)
+                    image.imageScale(.medium)
                         .font(.title)
                 }
             }
+            .background(.ultraThinMaterial)
+            .clipShape(Circle())
+            
             VStack(alignment: .leading, spacing: 8) {
                 Text(title)
                     .font(.headline)
                     .lineLimit(1)
+                    .minimumScaleFactor(0.5)
                 Text(subtitle)
-                    .font(.largeTitle)
+                    .font(.title2)
                     .fontWeight(.bold)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
             }
         }
+        
     }
 }
 
 struct MesurementView_Previews: PreviewProvider {
     static var previews: some View {
-        MesurementView(title: "Min Temp", subtitle: "21°")
+        MesurementView(
+            title: "Min Temp",
+            subtitle: "21°",
+            image: Image(systemName: "thermometer")
+        )
     }
 }

@@ -14,4 +14,5 @@
 "today_weather" = "Today’s Weather"; // en
 "weather" = "Weather"; // en
 "wind_speed" = "Wind Speed"; // en
+"temperture" = "Temperture";
 

@@ -21,7 +21,8 @@ final class OpenWeatherMapRepository: WeatherRepository {
                 "appid" : "7dd3af04282f3d5c97c839e4b63cec98",
                 "units" : "metric"
             ],
-            cachePolicy: .returnCacheDataElseLoad(ttl: 60) // caching 5 minutes
+//            cachePolicy: .returnCacheDataElseLoad(ttl: 60) // caching 5 minutes
+            cachePolicy: .reloadIgnoringLocalCacheData
         )
         return try await service.requestObject(request: request)
     }

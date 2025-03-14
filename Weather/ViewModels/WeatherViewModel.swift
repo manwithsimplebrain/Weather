@@ -8,6 +8,9 @@
 import Foundation
 import Factory
 import FirebaseAnalytics
+import CoreLocation
+import Combine
+
 
 class WeatherViewModel: ObservableObject {
     // Properties for UI
@@ -15,6 +18,7 @@ class WeatherViewModel: ObservableObject {
     @Published var address: Address?
     @Published var backgroundImage: UIImage?
     @Published var showGuideView = false
+    @Published var location: CLLocationCoordinate2D = .init()
     
     // Dependencies
     @Injected(\.weatherRepository) private var weatherRepository
@@ -22,6 +26,26 @@ class WeatherViewModel: ObservableObject {
     @Injected(\.locationService) private var locationService
     @Injected(\.trackingService) private var trackingService
     @Injected(\.storageService) private var storageService
+    
+    private var cancellables: Set<AnyCancellable> = []
+    
+    init() {
+        $location
+            .removeDuplicates {
+                $0.latitude == $1.latitude && $0.longitude == $1.longitude
+            }
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .sink {[weak self] coordinate in
+                Task {
+                    do {
+                        try await self?.fetchWeather(at: coordinate)
+                    } catch {
+                        print("Fetch weather failed: \(error)")
+                    }
+                }
+            }
+            .store(in: &cancellables)
+    }
     
     func requestLocationPermission() {
         Task {
@@ -46,10 +70,17 @@ class WeatherViewModel: ObservableObject {
     func requestCurrentLocation() async throws {
         let coordinate = try await locationService.requestCurrentLocation().coordinate
         print(coordinate)
+        try await fetchWeather(at: coordinate)
+    }
+    
+    func fetchWeather(at coordinate: CLLocationCoordinate2D) async throws {
         async let weatherTask = weatherRepository.fetchWeather(lat: coordinate.latitude, long: coordinate.longitude)
         async let addressTask = geoRepository.convert(lat: coordinate.latitude, long: coordinate.longitude)
         
         let (weather, address) = try await (weatherTask, addressTask)
+        print("WEATHER: \(weather)")
+        print("ADDRESS: \(address)")
+        print("======+======+======+======+======+======+======+======+======")
         
         // fetch background image
         fetchBackgroundImage(name: weather.icon)
@@ -57,8 +88,6 @@ class WeatherViewModel: ObservableObject {
         await MainActor.run {
             self.weather = weather
             self.address = address
-            
-            trackingService.logEvent(DefaultEvent(name: AnalyticsEventAddToCart))
         }
     }
     
@@ -92,12 +121,8 @@ extension WeatherViewModel {
         return L10n.todayWeather
     }
     
-    var minTemperature: String {
-        return L10n.minTemp
-    }
-    
-    var maxTemperature: String {
-        return L10n.maxTemp
+    var temperature: String {
+        return L10n.temperture
     }
     
     var humidity: String {
@@ -118,6 +143,10 @@ extension WeatherViewModel {
     
     var settingsTab: String {
         return L10n.settings
+    }
+    
+    var place: String {
+        return address?.city ?? address?.country ?? "Unknown"
     }
 }
 

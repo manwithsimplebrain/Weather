@@ -102,6 +102,15 @@ extension Weather {
         return "\(Int(min.rounded()))°"
     }
     
+    var minMaxTempString: String {
+        let mi = Int(min.rounded())
+        let ma = Int(max.rounded())
+        if mi == ma {
+            return "\(mi)°"
+        }
+        return "\(mi)/\(ma)°"
+    }
+    
     var windString: String {
         return "\(Int(wind.rounded())) m/s"
     }

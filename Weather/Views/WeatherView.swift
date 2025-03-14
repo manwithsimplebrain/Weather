@@ -10,6 +10,7 @@ import CoreLocationUI
 
 struct WeatherView: View {
     @StateObject private var viewModel = WeatherViewModel()
+    @State private var showSearchingLocation = false
     
     var body: some View {
         ZStack {
@@ -48,6 +49,9 @@ struct WeatherView: View {
             Spacer()
             bottomContent
         }
+        .fullScreenCover(isPresented: $showSearchingLocation) {
+            SearchLocationView(selectedLocation: $viewModel.location)
+        }
     }
     
     var topContent: some View {
@@ -71,51 +75,63 @@ struct WeatherView: View {
             
             HStack {
                 MesurementView(
-                    title: viewModel.minTemperature,
-                    subtitle: weather!.minTempString,
+                    title: viewModel.temperature,
+                    subtitle: weather!.minMaxTempString,
                     image: Image(systemName: "thermometer")
                 )
                 Spacer()
-                MesurementView(
-                    title: viewModel.maxTemperature,
-                    subtitle: weather!.maxTempString,
-                    image: Image(systemName: "thermometer")
-                )
-            }
-            HStack {
                 MesurementView(
                     title: viewModel.windSpeed,
                     subtitle: weather!.windString,
                     image: Image(systemName: "wind.snow")
                 )
-                Spacer()
+            }
+            HStack {
                 MesurementView(
                     title: viewModel.humidity,
                     subtitle: weather!.humidityString,
                     image: Image(systemName: "humidity")
                 )
-            }
-            HStack {
+                Spacer()
                 MesurementView(
                     title: viewModel.pressure,
                     subtitle: weather!.pressureString,
                     image: Image(systemName: "aqi.medium")
                 )
-                Spacer()
             }
         }
         .foregroundColor(.white)
         .padding()
-        .background(RoundedRectangle(cornerRadius: 20).fill(.ultraThinMaterial).ignoresSafeArea())
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(.ultraThinMaterial)
+                .ignoresSafeArea()
+        )
         .backgroundStyle(.black)
     }
     
     var locationSection: some View {
         VStack(alignment: .leading) {
-            Text(viewModel.address?.city ?? "")
-                .font(.system(size: 50))
-                .fontWeight(.heavy)
-                .bold()
+            HStack {
+                Text(viewModel.place)
+                    .font(.system(size: 50))
+                    .fontWeight(.heavy)
+                    .bold()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.4)
+                Spacer()
+                Button {
+                    showSearchingLocation.toggle()
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .imageScale(.large)
+                        .fontWeight(.bold)
+                }
+                .padding(10)
+                .foregroundStyle(.white)
+                .background(.ultraThinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+            }
             Text("\(viewModel.lastUpdateAt) \(Date().formatted())")
                 .font(.headline)
                 .fontWeight(.medium)
@@ -151,6 +167,7 @@ struct WeatherView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherView()
+            .environmentObject(WeatherViewModel())
     }
 }
 

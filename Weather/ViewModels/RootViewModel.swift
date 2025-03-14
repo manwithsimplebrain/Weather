@@ -39,7 +39,6 @@ extension RootViewModel {
         loginViewModel.$isloggedIn
             .receive(on: DispatchQueue.main)
             .sink { [weak self] isLoggedIn in
-                // Chỉ cập nhật tokenValid nếu không đang kiểm tra token
                 guard let self = self, !self.isCheckingToken else { return }
                 self.tokenValid = isLoggedIn
             }
